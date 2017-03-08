@@ -22,9 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Sign Up", "Create", "User")</li>
-                </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>

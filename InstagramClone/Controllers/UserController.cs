@@ -64,11 +64,25 @@ namespace InstagramClone.Controllers
 
             if (user != null)
             {
+                Session["ID"] = user.UserId;
                 return RedirectToAction("Index");
             }
             else
             {
                 return RedirectToAction("Login");
+            }
+        }
+
+        public ActionResult Logoff()
+        {
+            if (Session["ID"] != null)
+            {
+                Session["ID"] = null;
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
             }
         }
         // GET: User/Edit/5
